@@ -1,0 +1,24 @@
+html {
+  text-align: center;
+  background-color: #333;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.reg-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 500px;
+  background-color: aliceblue;
+  border-radius: 10%;
+  overflow: hidden;
+  border: 2px solid black;
+  box-shadow: 15px 10px 20px 10px;
+}
