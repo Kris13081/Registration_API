@@ -2,10 +2,7 @@ package selfproject.registeration.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import selfproject.registeration.models.dto.UserDto;
 import selfproject.registeration.models.entity.User;
 import selfproject.registeration.services.UserService;
@@ -23,8 +20,7 @@ public class UserController {
 
     @CrossOrigin(origins = "*")
     @PostMapping("/register")
-    public ResponseEntity<User> registerUser(UserDto user) {
+    public ResponseEntity<User> registerUser(@RequestBody UserDto user) {
         return ResponseEntity.ok(userService.registerUser(user));
     }
-
 }

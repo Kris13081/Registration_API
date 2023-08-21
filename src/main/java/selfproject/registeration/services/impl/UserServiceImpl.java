@@ -39,17 +39,18 @@ public class UserServiceImpl implements UserService {
         String firstName = userDto.getFirstName();
         String lastName = userDto.getLastName();
         String email = userDto.getEmail();
-        String phoneNumber = userDto.getPhone();
+        String phone = userDto.getPhone();
         String year = userDto.getYears();
         String month = userDto.getMonth();
         String day = userDto.getDay();
+        String country = userDto.getCountry();
 
-        if (userRepository.existsByEmailAndPhone(email, phoneNumber)) {
+        if (userRepository.existsByEmailAndPhone(email, phone)) {
             throw new RuntimeException("User with this phone and email already exists!");
         } else {
             LocalDate birthDate = LocalDate.of(Integer.parseInt(year), convertMonthToInt(month), Integer.parseInt(day));
 
-            User userToRegister = new User(firstName, lastName, email, phoneNumber, birthDate);
+            User userToRegister = new User(firstName, lastName, email, phone, birthDate, country);
             userRepository.save(userToRegister);
 
             return userToRegister;

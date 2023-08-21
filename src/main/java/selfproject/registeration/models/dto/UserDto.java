@@ -7,8 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Value;
 
-import java.time.Month;
 
 @Getter
 @Setter
@@ -35,7 +35,8 @@ public class UserDto {
 
     private String month;
 
-    @Column(nullable = false, unique = true)
+    @Value("${default.phone}")
+    @Column(unique = true)
     @Size(min = 10, max = 10)
     private String phone;
 

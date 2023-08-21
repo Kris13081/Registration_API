@@ -8,6 +8,8 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import java.time.LocalDate;
 
@@ -29,8 +31,8 @@ public class User extends BaseEntity {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Pattern(regexp="^(0|[1-9][0-9]*)$")
-    @Column(nullable = false, unique = true)
+    @Value("${default.phone}")
+    @Column(unique = true)
     @Size(min = 10, max = 10)
     private String phone;
 
@@ -43,12 +45,13 @@ public class User extends BaseEntity {
     public User() {
     }
 
-    public User(String firstName, String lastName, String email, String phone, LocalDate birthDate) {
+    public User(String firstName, String lastName, String email, String phone, LocalDate birthDate, String country) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
         this.birthDate = birthDate;
+        this.country = country;
     }
 }
 
