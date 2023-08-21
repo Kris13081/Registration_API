@@ -7,27 +7,24 @@ const handleSubmit = async (event) => {
     formData.forEach((value, key) => {
       data[key] = value;
     });
-
-   /* try {
-      const response = await fetch("YOUR_BACKEND_ENDPOINT", {
+   try {
+      const response = await fetch("/api/v1/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         console.log("Form data submitted successfully");
-        formRef.current.reset();
       } else {
         console.error("Failed to submit form data");
       }
     } catch (error) {
       console.error("An error occurred:", error);
     }
-  }; */
-        console.log("Form data:", data);
-    };
+    console.log(data);
+  }; 
     
   export default handleSubmit;

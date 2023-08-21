@@ -6,4 +6,5 @@ import selfproject.registeration.models.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+    boolean existsByEmailAndPhone(String email, String phone);
 }
