@@ -9,16 +9,16 @@ function FormInputs() {
 		<form action="" className="form-container" onSubmit={handleSubmit}>
 		<div className="text-input-container">      
 			<div className="input-wrapper-firstname"> 
-				<span>First Name: </span><input type="text" name="firstName" required pattern="^[A-Za-z]{2,30}$" onInvalid= {(e) => { e.target.setCustomValidity("Length has to be between 2 and 30 characters, without digits and symbols!");}}/>
+				<span>First Name: </span><input type="text" name="firstName" required pattern="^[A-Za-z]{2,30}$" onInvalid= {(e) => { e.target.setCustomValidity("Length has to be between 2 and 30 characters, without digits and symbols!"); e.target.setCustomValidity("");}}/>
 			</div>
 			<div className="input-wrapper-lastname">
-				<span>Last Name: </span><input type="text" name="lastName" required pattern="^[A-Za-z]{2,30}$" onInvalid= {(e) => { e.target.setCustomValidity("Length has to be between 2 and 30 characters, without digits and symbols!");}}/> 
+				<span>Last Name: </span><input type="text" name="lastName" required pattern="^[A-Za-z]{2,30}$" onInvalid= {(e) => { e.target.setCustomValidity("Length has to be between 2 and 30 characters, without digits and symbols!"); e.target.setCustomValidity("");}}/> 
 			</div>
 			<div className="input-wrapper-phone">
-				<span>Phone: </span><input type="text" name="phone" required pattern="[0-9]{10}" onInvalid= {(e) => { e.target.setCustomValidity("The number has to be exactly 10 digits!");}}/> 
+				<span>Phone: </span><input type="text" name="phone" required pattern="[0-9]{10}" onInvalid= {(e) => { e.target.setCustomValidity("The number has to be exactly 10 digits!"); e.target.setCustomValidity("");}}/> 
 			</div>
 			<div className="input-wrapper-email">
-				<span>E-mail: </span><input type="text" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?" onInvalid={(e) => { e.target.setCustomValidity("Please enter a valid email address");}}/> 
+				<span>E-mail: </span><input type="text" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?" onInvalid={(e) => { e.target.setCustomValidity("Please enter a valid email address"); e.target.setCustomValidity("");}}/> 
 			</div>
 		</div>
 		<div className="coutries-wrapper">

@@ -1,4 +1,5 @@
 const handleSubmit = async (event) => {
+
   event.preventDefault();
 
   const formData = new FormData(event.target);
@@ -19,6 +20,7 @@ const handleSubmit = async (event) => {
 
      if (response.ok) {
         console.log("Form data submitted successfully");
+        event.target.reset();
      } else {
         console.error("Failed to submit form data");
      }
