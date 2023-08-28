@@ -56,6 +56,7 @@ public class UserServiceImpl implements UserService {
             return userToRegister;
         }
     }
+
     @Override
     public int convertMonthToInt(String month) {
         if (!months.contains(month)) {

@@ -16,15 +16,15 @@ function FormInputs() {
 			</div>
 			<div className="input-wrapper-lastname">
 				<span>Last Name: </span><input type="text" name="lastName" pattern="^[A-Za-z]{2,25}$" onInvalid={(e) =>
-              		e.target.setCustomValidity('First name must contain 2 to 25 alphabetical characters.') } onChange={(e) => e.target.setCustomValidity('')} required/> 
+              		e.target.setCustomValidity('Last name must contain 2 to 25 alphabetical characters.') } onChange={(e) => e.target.setCustomValidity('')} required/> 
 			</div>
 			<div className="input-wrapper-phone">
 				<span>Phone: </span><input type="text" name="phone" pattern="[0-9]{10}" onInvalid={(e) =>
-              		e.target.setCustomValidity('Phone must contain exactly 10 digits.') } onChange={(e) => e.target.setCustomValidity('')} required/> 
+              		e.target.setCustomValidity('Phone number must contain exactly 10 digits.') } onChange={(e) => e.target.setCustomValidity('')} required/> 
 			</div>
 			<div className="input-wrapper-email">
 				<span>E-mail: </span><input type="text" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?"
-				 onInvalid={(e) => e.target.setCustomValidity('Invalid email format.') } onChange={(e) => e.target.setCustomValidity('')} required/> 
+				 onInvalid={(e) => e.target.setCustomValidity('Invalid email.') } onChange={(e) => e.target.setCustomValidity('')} required/> 
 			</div>
 		</div>
 		<div className="coutries-wrapper">

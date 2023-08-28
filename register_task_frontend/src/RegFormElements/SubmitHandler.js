@@ -19,13 +19,13 @@ const handleSubmit = async (event) => {
      });
 
      if (response.ok) {
-        console.log("Form data submitted successfully");
+        alert("Form data submitted successfully");
         event.target.reset();
      } else {
-        console.error("Failed to submit form data");
+        alert("User with this email or phonenumber is already existing!");
      }
   } catch (error) {
-     console.error("An error occurred:", error);
+    alert("An error occurred:", error);
   }
 
   console.log(data);
